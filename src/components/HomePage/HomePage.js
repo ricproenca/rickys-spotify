@@ -9,6 +9,8 @@ import Toast from "./Toast/Toast";
 import Login from "./Login/Login";
 
 const HomePage = ({ isValidSession, location }) => {
+  console.log("🚀 ~ HomePage");
+
   const { state } = location;
   const sessionExpired = state && state.session_expired;
 
@@ -19,11 +21,11 @@ const HomePage = ({ isValidSession, location }) => {
       {isValidSession() ? (
         <Redirect to="/dashboard" />
       ) : (
-        <Container fixed>
-          {sessionExpired && <Toast open={true} />}
-          <Login handleLogin={handleLogin} />
-        </Container>
-      )}
+      <Container fixed>
+        {sessionExpired && <Toast open={true} />}
+        <Login handleLogin={handleLogin} />
+      </Container>
+      {/* )} */}
     </Fragment>
   );
 };

@@ -1,0 +1,1 @@
+export const SPOTIFY_SET_TOKEN = "SPOTIFY_SET_TOKEN";

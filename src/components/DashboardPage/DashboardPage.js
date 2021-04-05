@@ -1,23 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
-const DashboardPage = ({ isValidSession }) => {
-  const RedirectHome = () => {
-    return (
-      <Redirect
-        to={{
-          pathname: "/",
-          state: {
-            session_expired: true
-          }
-        }}
-      />
-    );
-  };
+const DashboardPage = () => {
+  console.log("🚀 ~ DashboardPage");
 
-  const renderDashboard = () => <Fragment>DashboardPage</Fragment>;
-
-  return isValidSession() ? renderDashboard() : RedirectHome();
+  return <Fragment>DashboardPage</Fragment>;
 };
 
 export default DashboardPage;
