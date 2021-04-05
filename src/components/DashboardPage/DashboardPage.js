@@ -1,23 +1,28 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
 const DashboardPage = ({ isValidSession }) => {
-  const RedirectHome = () => {
-    return (
-      <Redirect
-        to={{
-          pathname: "/",
-          state: {
-            session_expired: true
-          }
-        }}
-      />
-    );
-  };
+  console.log("🚀 ~ DashboardPage");
+  console.log("isValidSession", isValidSession());
 
-  const renderDashboard = () => <Fragment>DashboardPage</Fragment>;
+  return (
+    <Fragment>
+      {isValidSession() ? (
+        <Fragment>Dashboard Page </Fragment>
+      ) : (
+        <Redirect to="/" />
+      )}
+    </Fragment>
+  );
+};
 
-  return isValidSession() ? renderDashboard() : RedirectHome();
+DashboardPage.propTypes = {
+  isValidSession: PropTypes.func
+};
+
+DashboardPage.defaultProps = {
+  sessionExpired: true
 };
 
 export default DashboardPage;

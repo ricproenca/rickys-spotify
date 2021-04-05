@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { getParamValues } from "../../utils/utils";

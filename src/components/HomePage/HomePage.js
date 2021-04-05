@@ -9,6 +9,8 @@ import Toast from "./Toast/Toast";
 import Login from "./Login/Login";
 
 const HomePage = ({ isValidSession, location }) => {
+  console.log("🚀 ~ HomePage");
+
   const { state } = location;
   const sessionExpired = state && state.session_expired;
 

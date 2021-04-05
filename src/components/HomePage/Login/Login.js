@@ -12,7 +12,7 @@ import loginStyles from "./Login.styles";
 const Login = ({ handleLogin }) => {
   const classes = loginStyles();
   const theme = useTheme();
-  console.log("🚀 ~ Login ~ theme", theme);
+  console.log("🚀 ~ Login");
 
   return (
     <Box className={classes.Container}>
