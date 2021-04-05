@@ -21,11 +21,11 @@ const HomePage = ({ isValidSession, location }) => {
       {isValidSession() ? (
         <Redirect to="/dashboard" />
       ) : (
-      <Container fixed>
-        {sessionExpired && <Toast open={true} />}
-        <Login handleLogin={handleLogin} />
-      </Container>
-      {/* )} */}
+        <Container fixed>
+          {sessionExpired && <Toast open={true} />}
+          <Login handleLogin={handleLogin} />
+        </Container>
+      )}
     </Fragment>
   );
 };
