@@ -12,6 +12,24 @@ import AppRouter from "./router/AppRouter";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
+/**
+ * Entry point of the App.
+ *
+ * <Provider>
+ * Component that makes the Redux store available to any nested components
+ * that need to access the Redux store.
+ *
+ * <ThemeProvider>
+ * Component that allows to customize Material-Ui theme
+ * in order to inject a theme into your application
+ *
+ * <CssBaseline>
+ * Component to kickstart an elegant, consistent, and simple baseline to build upon.
+ * It's basically the same as normalize.css
+ *
+ * <AppRouter>
+ * Routing configuration based on React Router, the standard routing library for React.
+ */
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>

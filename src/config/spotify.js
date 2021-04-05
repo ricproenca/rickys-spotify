@@ -1,6 +1,28 @@
+/**
+ * authEndpoint
+ * URL where we need to authenticate using Spotify.
+ * All Spotify Authentication requests must be passed through this URL.
+ */
+const authEndpoint = "https://accounts.spotify.com/authorize";
+
+/**
+ * redirectUri
+ * We should configure this in Spotify Web API settings.
+ * This is the callback URL where to take back the user if the Spotify login was successful.
+ */
 const redirectUri = "http://localhost:3000/redirect/";
+
+/**
+ * clientId
+ * Provided  by the Spotify Web API.
+ */
 const spotifyClientId = "b2726485320a441e9f1d8fccf19a92ea";
 
+/**
+ * scopes
+ * Permissions which you need to ask Spotify for.
+ * More such permissions are available on Spotify API Documentation.
+ */
 const spotifyScopes = [
   "user-read-currently-playing",
   "user-read-recently-played",
@@ -15,6 +37,10 @@ const scopes = `scope=${spotifyScopes.join("%20")}`;
 const responseType = "response_type=token";
 const showDialog = "show_dialog=true";
 
-export const authEndpoint = "https://accounts.spotify.com/authorize";
-
+/**
+ * loginUrl
+ * Final URL which needs to be called in order to authorize an user for this Spotify Clone app.
+ * This URL contains the Client ID and all the permissions
+ * so that Spotify knows about our app and allows user authentication.
+ */
 export const loginUrl = `${authEndpoint}?${clientId}&${redirect}&${scopes}&${responseType}&${showDialog}`;

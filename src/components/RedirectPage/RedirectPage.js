@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 
 import { getParamValues } from "../../utils/utils";
 
-const RedirectPage = (props) => {
+const RedirectPage = ({ setExpiryTime, history, location }) => {
   useEffect(() => {
-    const { setExpiryTime, history, location } = props;
-
     if (!location.hash) {
       return history.push("/");
     }

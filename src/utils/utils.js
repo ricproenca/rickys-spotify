@@ -1,3 +1,10 @@
+/**
+ * getParamValues
+ * Retrieves the params from an URL.
+ *
+ * @param {string} url
+ * @returns Object
+ */
 export const getParamValues = (url) => {
   return url
     .slice(1)
