@@ -4,16 +4,11 @@ import { Redirect } from "react-router-dom";
 
 import Container from "@material-ui/core/Container";
 
+import { isValidSession } from "../../common/Spotify/SpotifyAuth";
 import { loginUrl } from "../../config/spotify";
-import Toast from "./Toast/Toast";
 import Login from "./Login/Login";
 
-const HomePage = ({ isValidSession, location }) => {
-  console.log("🚀 ~ HomePage");
-
-  const { state } = location;
-  const sessionExpired = state && state.session_expired;
-
+const HomePage = () => {
   const handleLogin = () => (window.location = loginUrl);
 
   return (
@@ -22,7 +17,6 @@ const HomePage = ({ isValidSession, location }) => {
         <Redirect to="/dashboard" />
       ) : (
         <Container fixed>
-          {sessionExpired && <Toast open={true} />}
           <Login handleLogin={handleLogin} />
         </Container>
       )}

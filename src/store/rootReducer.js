@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-
+import SpotifyReducer from "../common/Spotify/SpotifyReducer";
 /**
  * rootReducer
  * Combination of all reducers.
@@ -9,6 +9,6 @@ import { combineReducers } from "redux";
  * into a single reducing function you can pass to createStore.
  *
  */
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({ spotify: SpotifyReducer });
 
 export default rootReducer;
