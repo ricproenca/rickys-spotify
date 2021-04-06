@@ -1,21 +1,23 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-
 import { getParamValues } from "../../utils/utils";
+import { setAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
 
-const RedirectPage = ({ setExpiryTime, history, location }) => {
+const RedirectPage = ({ history, location }) => {
+  console.log("🚀 ~ RedirectPage ~ history, location", history, location);
   useEffect(() => {
     if (!location.hash) {
       return history.push("/");
     }
 
-    const accessToken = getParamValues(location.hash);
-    const expiryTime = new Date().getTime() + accessToken.expires_in * 1000;
+    const urlParams = getParamValues(location.hash);
+    const { access_token, expires_in, token_type } = urlParams;
 
-    localStorage.setItem("params", JSON.stringify(accessToken));
-    localStorage.setItem("expiry_time", expiryTime);
+    const expiryTime = new Date().getTime() + urlParams.expires_in * 1000;
 
-    setExpiryTime(expiryTime);
+    setAccessTokenParams(access_token, expires_in, token_type, expiryTime);
+
+    // setExpiryTime(expiryTime);
 
     history.push("/dashboard");
   });

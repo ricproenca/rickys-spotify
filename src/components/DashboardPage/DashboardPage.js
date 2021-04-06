@@ -2,19 +2,12 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
-const DashboardPage = ({ isValidSession }) => {
-  console.log("🚀 ~ DashboardPage");
-  console.log("isValidSession", isValidSession());
+import { isValidSession } from "../../common/Spotify/SpotifyAuth";
 
-  return (
-    <Fragment>
-      {isValidSession() ? (
-        <Fragment>Dashboard Page </Fragment>
-      ) : (
-        <Redirect to="/" />
-      )}
-    </Fragment>
-  );
+const DashboardPage = () => {
+  console.log("🚀 ~ DashboardPage");
+
+  return <Fragment>Dashboard Page </Fragment>;
 };
 
 DashboardPage.propTypes = {
