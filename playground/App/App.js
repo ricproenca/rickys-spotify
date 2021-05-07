@@ -7,7 +7,6 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  console.log("App.js");
   const [token, setToken] = useState();
 
   useEffect(() => {

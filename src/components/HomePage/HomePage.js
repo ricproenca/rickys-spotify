@@ -8,6 +8,11 @@ import { isValidSession } from "../../common/Spotify/SpotifyAuth";
 import { loginUrl } from "../../config/spotify";
 import Login from "./Login/Login";
 
+/**
+ * Check if the user has a valid session and redirect to the proper route
+ * dashboard: in case of a valid session
+ * login: in case of a non valid session
+ */
 const HomePage = () => {
   const handleLogin = () => (window.location = loginUrl);
 
@@ -22,16 +27,6 @@ const HomePage = () => {
       )}
     </Fragment>
   );
-};
-
-HomePage.propTypes = {
-  isValidSession: PropTypes.func,
-  location: PropTypes.object
-};
-
-HomePage.defaultProps = {
-  sessionExpired: true,
-  location: PropTypes.object
 };
 
 export default HomePage;

@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import Box from "@material-ui/core/Box";
 import { Button } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 import spotifyLogo from "./assets/spotify-logo.png"; // Tell webpack this JS file uses this image
 import loginStyles from "./Login.styles";
 
+/**
+ * Login page
+ */
 const Login = ({ handleLogin }) => {
   const classes = loginStyles();
-  const theme = useTheme();
-  console.log("🚀 ~ Login");
 
   return (
     <Box className={classes.Container}>
@@ -46,11 +46,14 @@ const Login = ({ handleLogin }) => {
 };
 
 Login.propTypes = {
+  /**
+   * Function that holds the validation of the login url
+   */
   handleLogin: PropTypes.func
 };
 
 Login.defaultProps = {
-  handleLogin: () => {}
+  handleLogin: () => false
 };
 
 export default Login;

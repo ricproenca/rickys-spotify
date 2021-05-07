@@ -7,10 +7,23 @@ import DashboardPage from "../components/DashboardPage/DashboardPage";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 
 import GuardedRoute from "./GuardedRoute";
-import DecisionRoute from "./DecisionRoute";
 
-import { isValidSession } from "../common/Spotify/SpotifyAuth";
-
+/**
+ * BrowserRouter
+ * A <Router> that uses the HTML5 history API
+ * (pushState, replaceState and the popstate event) to keep your UI in sync with the URL.
+ *
+ * Switch
+ * Renders the first child <Route> or <Redirect> that matches the location.
+ * It renders a route exclusively.
+ *
+ * Route
+ * Renders some UI when it's path matches the current URL.
+ *
+ * GuardedRoute
+ * Is a replacement for the  Route component provided
+ * but allows to guard the routes with a validation function.
+ */
 const AppRouter = () => {
   return (
     <BrowserRouter>

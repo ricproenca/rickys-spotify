@@ -4,9 +4,20 @@ import { Route, Redirect } from "react-router-dom";
 
 import { isValidSession } from "../common/Spotify/SpotifyAuth";
 
-const GuardedRoute = ({ component, ...rest }) => {
-  console.log("🚀 ~ GuardedRoute ~ GuardedRoute", GuardedRoute);
+/**
+ * @typedef {Object} Components-Props
+ * @property {function} component - The component to render
+ * @property {...rest} rest - The rest of the props for the route
+ */
 
+/**
+ * GuardedRoute
+ * Is a replacement for the  Route component provided
+ * but allows to guard the routes with a validation function.
+ *
+ * @param {Components-Props}
+ */
+const GuardedRoute = ({ component, ...rest }) => {
   return isValidSession() ? (
     <Route {...rest} render={component} />
   ) : (
@@ -15,11 +26,14 @@ const GuardedRoute = ({ component, ...rest }) => {
 };
 
 GuardedRoute.propTypes = {
+  /**
+   * Component to render
+   */
   component: PropTypes.func
 };
 
 GuardedRoute.defaultProps = {
-  component: () => {}
+  component: () => null
 };
 
 export default GuardedRoute;

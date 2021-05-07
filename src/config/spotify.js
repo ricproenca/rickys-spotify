@@ -16,7 +16,7 @@ const redirectUri = "http://localhost:3000/redirect/";
  * clientId
  * Provided  by the Spotify Web API.
  */
-const spotifyClientId = "b2726485320a441e9f1d8fccf19a92ea";
+const spotifyClientId = "05647fe3b2f54b7786acea04e66bfea7";
 
 /**
  * scopes

@@ -7,11 +7,8 @@ export const initialState = {
   expirationTime: 0
 };
 
-const SpotifyReducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  console.log("🚀 ~ SpotifyReducer", type, payload);
-
-  switch (action.type) {
+const SpotifyReducer = (state = initialState, { type, payload } = {}) => {
+  switch (type) {
     case SPOTIFY_SET_TOKEN:
       const { accessToken, expiresIn, tokenType, expirationTime } = payload;
       return { ...state, accessToken, expiresIn, tokenType, expirationTime };

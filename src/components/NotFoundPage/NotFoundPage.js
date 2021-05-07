@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Not found page (not used for now)
+ */
 const NotFoundPage = () => {
   return (
     <Fragment>
