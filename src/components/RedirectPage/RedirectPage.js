@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getParamValues } from "../../utils/utils";
-import { setAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
-
+import { persistAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
+import { setSpotifyToken } from "../../common/Spotify/SpotifyActionCreator";
+import { SPOTIFY_SET_TOKEN } from "../../common/Spotify/SpotifyActionTypes";
 /**
  * Spotify redirect page
  */
@@ -21,9 +22,21 @@ const RedirectPage = ({ history, location }) => {
 
     const expiry_time = new Date().getTime() + urlParams.expires_in * 1000;
 
-    setAccessTokenParams({ access_token, expires_in, token_type, expiry_time });
+    dispatch(
+      setSpotifyToken({
+        accessToken: access_token,
+        expiresIn: expires_in,
+        tokenType: token_type,
+        expirationTime: expiry_time
+      })
+    );
 
-    // * do we need to set expiration time? -> setExpiryTime(expiryTime);
+    persistAccessTokenParams({
+      access_token,
+      expires_in,
+      token_type,
+      expiry_time
+    });
 
     history.push("/dashboard");
   });

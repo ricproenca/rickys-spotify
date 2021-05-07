@@ -1,6 +1,6 @@
 import { SPOTIFY_SET_TOKEN } from "./SpotifyActionTypes";
 
-export const  = ({
+export const setSpotifyToken = ({
   accessToken,
   expiresIn,
   tokenType,

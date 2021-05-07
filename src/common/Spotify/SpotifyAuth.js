@@ -11,7 +11,7 @@
  *
  * @param {SpotifySessionParams}
  */
-export const setAccessTokenParams = ({
+export const persistAccessTokenParams = ({
   access_token,
   expires_in,
   token_type,

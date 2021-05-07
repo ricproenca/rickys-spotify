@@ -12,7 +12,6 @@ const SpotifyReducer = (state = initialState, { type, payload } = {}) => {
     case SPOTIFY_SET_TOKEN:
       const { accessToken, expiresIn, tokenType, expirationTime } = payload;
       return { ...state, accessToken, expiresIn, tokenType, expirationTime };
-
     default:
       return state;
   }
