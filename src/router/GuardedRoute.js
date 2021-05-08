@@ -19,7 +19,7 @@ import { isValidSession } from "../common/Spotify/SpotifyAuth";
  */
 const GuardedRoute = ({ component, ...rest }) => {
   return isValidSession() ? (
-    <Route {...rest} render={component} />
+    <Route {...rest} component={component} />
   ) : (
     <Redirect to="/" />
   );
