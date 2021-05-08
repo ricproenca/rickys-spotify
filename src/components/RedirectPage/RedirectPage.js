@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getParamValues } from "../../utils/utils";
 import { persistAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
 import { setSpotifyToken } from "../../common/Spotify/SpotifyActionCreator";
-import { SPOTIFY_SET_TOKEN } from "../../common/Spotify/SpotifyActionTypes";
+
 /**
  * Spotify redirect page
  */
