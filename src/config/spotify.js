@@ -24,11 +24,25 @@ const spotifyClientId = "05647fe3b2f54b7786acea04e66bfea7";
  * More such permissions are available on Spotify API Documentation.
  */
 const spotifyScopes = [
-  "user-read-currently-playing",
+  "ugc-image-upload",
   "user-read-recently-played",
   "user-read-playback-state",
   "user-top-read",
-  "user-modify-playback-state"
+  "app-remote-control",
+  "playlist-modify-public",
+  "user-modify-playback-state",
+  "playlist-modify-private",
+  "user-follow-modify",
+  "user-read-currently-playing",
+  "user-follow-read",
+  "user-library-modify",
+  "user-read-playback-position",
+  "playlist-read-private",
+  "user-read-email",
+  "user-read-private",
+  "user-library-read",
+  "playlist-read-collaborative",
+  "streaming"
 ];
 
 const clientId = `client_id=${spotifyClientId}`;
