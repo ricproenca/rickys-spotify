@@ -5,12 +5,12 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { getAccessTokenParams } from "common/Spotify/SpotifyAuth";
 import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
 
+import Sidebar from "../../components/Player/SideBar/Sidebar";
 /**
  * Dashboard Page
  */
 const DashboardPage = () => {
   const dispatch = useDispatch();
-
   const spotifyApi = new SpotifyWebApi();
   const { access_token, expires_in, token_type, expiry_time } = getAccessTokenParams();
 
@@ -52,7 +52,11 @@ const DashboardPage = () => {
     console.log("🚀 ~ spotifyApi.getMyRecentlyPlayedTracks", getMyRecentlyPlayedTracks);
   }, []);
 
-  return <Fragment>Dashboard Page </Fragment>;
+  return (
+    <Fragment>
+      <Sidebar spotifyApi={spotifyApi} />
+    </Fragment>
+  );
 };
 
 export default DashboardPage;

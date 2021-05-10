@@ -4,7 +4,8 @@ export const initialState = {
   accessToken: "",
   expiresIn: 0,
   tokenType: "",
-  expirationTime: 0
+  expirationTime: 0,
+  userPlaylists: []
 };
 
 const SpotifyReducer = (state = initialState, { type, payload } = {}) => {

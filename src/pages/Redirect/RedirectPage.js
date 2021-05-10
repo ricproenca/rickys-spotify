@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { getParamValues } from "utils/utils";
 import { persistAccessTokenParams } from "common/Spotify/SpotifyAuth";
+import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
+import { getParamValues } from "utils/utils";
 
 /**
  * Spotify redirect page
@@ -18,6 +19,13 @@ const RedirectPage = ({ history, location }) => {
     const expiry_time = new Date().getTime() + urlParams.expires_in * 1000;
 
     persistAccessTokenParams({
+      access_token,
+      expires_in,
+      token_type,
+      expiry_time
+    });
+
+    setSpotifyToken({
       access_token,
       expires_in,
       token_type,
