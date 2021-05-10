@@ -11,12 +11,7 @@
  *
  * @param {SpotifySessionParams}
  */
-export const persistAccessTokenParams = ({
-  access_token,
-  expires_in,
-  token_type,
-  expiry_time
-}) => {
+export const persistAccessTokenParams = ({ access_token, expires_in, token_type, expiry_time }) => {
   try {
     localStorage.setItem("access_token", access_token);
     localStorage.setItem("expires_in", expires_in);

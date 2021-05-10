@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 
-import { isValidSession } from "../common/Spotify/SpotifyAuth";
+import { isValidSession } from "common/Spotify/SpotifyAuth";
 
 /**
  * @typedef {Object} Components-Props
@@ -18,11 +18,7 @@ import { isValidSession } from "../common/Spotify/SpotifyAuth";
  * @param {Components-Props}
  */
 const GuardedRoute = ({ component, ...rest }) => {
-  return isValidSession() ? (
-    <Route {...rest} component={component} />
-  ) : (
-    <Redirect to="/" />
-  );
+  return isValidSession() ? <Route {...rest} component={component} /> : <Redirect to="/" />;
 };
 
 GuardedRoute.propTypes = {

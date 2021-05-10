@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import theme from "./config/theme";
-import store from "./store/store";
-import AppRouter from "./router/AppRouter";
+import theme from "config/theme";
+import store from "store/store";
+import AppRouter from "router/AppRouter";
 
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";

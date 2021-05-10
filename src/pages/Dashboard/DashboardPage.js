@@ -2,8 +2,8 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import SpotifyWebApi from "spotify-web-api-js";
 
-import { getAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
-import { setSpotifyToken } from "../../common/Spotify/SpotifyActionCreator";
+import { getAccessTokenParams } from "common/Spotify/SpotifyAuth";
+import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
 
 /**
  * Dashboard Page
@@ -12,12 +12,7 @@ const DashboardPage = () => {
   const dispatch = useDispatch();
 
   const spotifyApi = new SpotifyWebApi();
-  const {
-    access_token,
-    expires_in,
-    token_type,
-    expiry_time
-  } = getAccessTokenParams();
+  const { access_token, expires_in, token_type, expiry_time } = getAccessTokenParams();
 
   // * do we need to save spotify auth to redux state?
   useEffect(() => {
@@ -54,10 +49,7 @@ const DashboardPage = () => {
     console.log("🚀 ~ spotifyApi.getMyTopTracks", getMyTopTracks);
 
     const getMyRecentlyPlayedTracks = await spotifyApi.getMyRecentlyPlayedTracks();
-    console.log(
-      "🚀 ~ spotifyApi.getMyRecentlyPlayedTracks",
-      getMyRecentlyPlayedTracks
-    );
+    console.log("🚀 ~ spotifyApi.getMyRecentlyPlayedTracks", getMyRecentlyPlayedTracks);
   }, []);
 
   return <Fragment>Dashboard Page </Fragment>;

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { getParamValues } from "../../utils/utils";
-import { persistAccessTokenParams } from "../../common/Spotify/SpotifyAuth";
+import { getParamValues } from "utils/utils";
+import { persistAccessTokenParams } from "common/Spotify/SpotifyAuth";
 
 /**
  * Spotify redirect page

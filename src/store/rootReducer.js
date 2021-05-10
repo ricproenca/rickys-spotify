@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import SpotifyReducer from "../common/Spotify/SpotifyReducer";
+import SpotifyReducer from "common/Spotify/SpotifyReducer";
 /**
  * rootReducer
  * Combination of all reducers.

@@ -21,9 +21,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
  * Thunks are the recommended middleware for basic Redux side effects logic;
  * They are good for complex synchronous logic or simple async logic that needs access to the store.
  */
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

@@ -29,11 +29,7 @@ const Login = ({ handleLogin }) => {
           Login to Rickys spotify
         </Button>
       </Box>
-      <Box
-        className={classes.Message}
-        textAlign="center"
-        fontWeight="fontWeightBold"
-      >
+      <Box className={classes.Message} textAlign="center" fontWeight="fontWeightBold">
         <Typography variant="overline" display="block" gutterBottom>
           Not another spotify clone...
         </Typography>

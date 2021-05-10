@@ -2,8 +2,8 @@ import React from "react";
 
 import Container from "@material-ui/core/Container";
 
-import { loginUrl } from "../../config/spotify";
-import Login from "../../components/Login/Login";
+import { loginUrl } from "config/spotify";
+import Login from "components/Login/Login";
 
 /**
  * Not found page (not used for now)
