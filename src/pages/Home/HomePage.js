@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
 import Container from "@material-ui/core/Container";
 
 import { isValidSession } from "../../common/Spotify/SpotifyAuth";
 import { loginUrl } from "../../config/spotify";
-import Login from "./Login/Login";
+import Login from "../../components/Login/Login";
 
 /**
  * Check if the user has a valid session and redirect to the proper route

@@ -26,7 +26,7 @@ const Login = ({ handleLogin }) => {
           color="primary"
           onClick={handleLogin}
         >
-          Login to spotify
+          Login to Rickys spotify
         </Button>
       </Box>
       <Box
@@ -34,11 +34,8 @@ const Login = ({ handleLogin }) => {
         textAlign="center"
         fontWeight="fontWeightBold"
       >
-        <Typography variant="button" display="block" gutterBottom>
-          Welcome to Rickys Spotify.
-        </Typography>
         <Typography variant="overline" display="block" gutterBottom>
-          (Just another spotify clone)
+          Not another spotify clone...
         </Typography>
       </Box>
     </Box>

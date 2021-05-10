@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import HomePage from "../components/HomePage/HomePage";
-import RedirectPage from "../components/RedirectPage/RedirectPage";
-import DashboardPage from "../components/DashboardPage/DashboardPage";
-import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
+import HomePage from "../pages/Home/HomePage";
+import RedirectPage from "../pages/Redirect/RedirectPage";
+import DashboardPage from "../pages/Dashboard/DashboardPage";
+import NotFoundPage from "../pages/NotFound/NotFoundPage";
 
 import GuardedRoute from "./GuardedRoute";
 
