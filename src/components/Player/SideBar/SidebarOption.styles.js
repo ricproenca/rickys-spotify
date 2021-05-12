@@ -14,16 +14,16 @@ const useStyles = makeStyles((theme) => ({
   },
   sidebarOption__icon: {
     marginLeft: 5,
-    paddingRight: 5
+    paddingRight: 5,
+    fontSize: 32
   },
   sidebarOption__p: {
     marginTop: 10,
-    marginLeft: 20,
-    fontSize: 18
+    marginLeft: 20
   },
   sidebarOption__h4: {
-    marginTop: 2,
-    fontSize: 18
+    marginTop: 4,
+    marginLeft: 8
   }
 }));
 

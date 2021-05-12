@@ -15,7 +15,7 @@ const sideBarStyles = makeStyles((theme) => ({
     width: "100%"
   },
   sidebar__logo: {
-    height: 100,
+    height: 55,
     width: "auto",
     padding: 10,
     margin: "auto"
