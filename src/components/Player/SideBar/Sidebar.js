@@ -1,27 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 
-import { getUserPlaylists } from "common/Spotify/SpotifyActionCreator";
 import SidebarOption from "./SidebarOption";
-
 import sideBarStyles from "./Sidebar.styles";
 
 const Sidebar = () => {
   const classes = sideBarStyles();
-  const dispatch = useDispatch();
 
-  // const playlists = useSelector((state) => state.spotify.playlists);
-
-  // useEffect(() => {
-  //   dispatch(getUserPlaylists());
-  // });
-
-  const playlists = [];
+  const userPlaylists = useSelector(state => state.spotify.userPlaylists);
+  const { total, items } = userPlaylists;
 
   return (
     <div className={classes.sidebar}>
@@ -34,9 +26,9 @@ const Sidebar = () => {
       <SidebarOption title="Search" Icon={SearchIcon} />
       <SidebarOption title="Your Library" Icon={LibraryMusicIcon} />
       <br />
-      <strong className={classes.sidebar__title}>PLAYLISTS</strong>
+      <strong className={classes.sidebar__title}>{`PLAYLISTS (${total})`}</strong>
       <hr className={classes.sidebarHr} />
-      {playlists?.items?.map((playlist, index) => (
+      {items?.map((playlist, index) => (
         <SidebarOption key={index} title={playlist.name} />
       ))}
     </div>
