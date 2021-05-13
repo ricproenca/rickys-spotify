@@ -1,7 +1,8 @@
 import {
   SPOTIFY_SET_TOKEN,
   SPOTIFY_GET_USER_PLAYLISTS,
-  SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST
+  SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST,
+  SPOTIFY_GET_USER_DETAILS
 } from "./SpotifyActionTypes";
 import { spotifyApi } from "./SpotifyAuth";
 
@@ -56,5 +57,12 @@ export const getPlaylist = (spotifyId = DISCOVER_WEEKLY_ID) => {
   return async dispatch => {
     const response = await spotifyApi.getPlaylist(spotifyId);
     return dispatch({ type: SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST, payload: response });
+  };
+};
+
+export const getUserDetails = () => {
+  return async dispatch => {
+    const response = await spotifyApi.getMe();
+    return dispatch({ type: SPOTIFY_GET_USER_DETAILS, payload: response });
   };
 };

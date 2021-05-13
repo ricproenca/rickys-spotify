@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Box from "@material-ui/core/Box";
 
-import { getUserPlaylists, getPlaylist } from "common/Spotify/SpotifyActionCreator";
+import { getUserPlaylists, getPlaylist, getUserDetails } from "common/Spotify/SpotifyActionCreator";
 
 import Sidebar from "../../components/SideBar/Sidebar";
 import Body from "../../components/Body/Body";
@@ -20,20 +20,17 @@ const Player = () => {
 
   const userPlaylists = useSelector(state => state.spotify.userPlaylists);
   const discoverWeeklyPlaylist = useSelector(state => state.spotify.discoverWeeklyPlaylist);
+  const user = useSelector(state => state.spotify.user);
 
-  useEffect(() => {
-    dispatch(getUserPlaylists());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getPlaylist());
-  }, []);
+  useEffect(() => dispatch(getUserPlaylists()), []);
+  useEffect(() => dispatch(getPlaylist()), []);
+  useEffect(() => dispatch(getUserDetails()), []);
 
   return (
     <Box className={classes.player}>
       <Box className={classes.player__body}>
         <Sidebar userPlaylists={userPlaylists} />
-        <Body discoverWeeklyPlaylist={discoverWeeklyPlaylist} />
+        <Body discoverWeeklyPlaylist={discoverWeeklyPlaylist} user={user} />
       </Box>
       <Footer />
     </Box>

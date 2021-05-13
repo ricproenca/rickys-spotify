@@ -8,16 +8,22 @@ import SongRow from "../SongRow/SongRow";
 
 import sideBarStyles from "./Body.styles";
 
-const Body = ({ discoverWeeklyPlaylist }) => {
+/**
+ * Body of the player
+ *
+ * @param {object} discoverWeeklyPlaylist - spotify playlist object
+ * @returns {ReactNode}
+ */
+const Body = ({ discoverWeeklyPlaylist, user }) => {
   const classes = sideBarStyles();
 
-  if (!discoverWeeklyPlaylist.images) {
+  if (!discoverWeeklyPlaylist.images || !user.email) {
     return null;
   }
 
   return (
     <div className={classes.body}>
-      <Header />
+      <Header user={user} />
       <div className={classes.body__info}>
         <img src={discoverWeeklyPlaylist?.images[0]?.url} alt="" />
         <div className={classes.body__infoText}>
@@ -41,11 +47,13 @@ const Body = ({ discoverWeeklyPlaylist }) => {
 };
 
 Body.propTypes = {
-  discoverWeeklyPlaylist: PropTypes.object
+  discoverWeeklyPlaylist: PropTypes.object,
+  user: PropTypes.object
 };
 
 Body.defaultProps = {
-  discoverWeeklyPlaylist: null
+  discoverWeeklyPlaylist: null,
+  user: null
 };
 
 export default Body;

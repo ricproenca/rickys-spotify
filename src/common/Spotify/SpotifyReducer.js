@@ -1,7 +1,8 @@
 import {
   SPOTIFY_SET_TOKEN,
   SPOTIFY_GET_USER_PLAYLISTS,
-  SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST
+  SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST,
+  SPOTIFY_GET_USER_DETAILS
 } from "./SpotifyActionTypes";
 
 /**
@@ -24,7 +25,8 @@ export const initialState = {
     previous: null,
     total: 0
   },
-  discoverWeeklyPlaylist: {}
+  discoverWeeklyPlaylist: {},
+  user: {}
 };
 
 /**
@@ -47,6 +49,10 @@ const SpotifyReducer = (state = initialState, { type, payload } = {}) => {
     case SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST:
       console.log("🚀 ~ SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST", payload);
       return { ...state, discoverWeeklyPlaylist: payload };
+
+    case SPOTIFY_GET_USER_DETAILS:
+      console.log("🚀 ~ SPOTIFY_GET_USER_DETAILS", payload);
+      return { ...state, user: payload };
 
     default:
       return state;

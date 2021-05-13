@@ -8,23 +8,23 @@ const SongRowStyles = makeStyles(theme => {
       display: "flex",
       alignItems: "center",
       zIndex: 100,
-      color: "#fff"
-    },
-    "songRow:hover": {
-      cursor: "pointer",
-      backgroundColor: "#000",
-      opacity: 0.8
+      color: "#fff",
+      "&:hover": {
+        cursor: "pointer",
+        backgroundColor: "#000",
+        opacity: 0.8
+      }
     },
     songRow__info: {
-      marginLeft: 20
-    },
-    "songRow__info > h1": {
-      fontSize: 16
-    },
-    "songRow__info > p": {
-      fontSize: 14,
-      marginTop: 3,
-      color: "#808080"
+      marginLeft: 20,
+      "& h1": {
+        fontSize: 16
+      },
+      "& p": {
+        fontSize: 14,
+        marginTop: 3,
+        color: "#808080"
+      }
     },
     songRow__album: {
       height: 40,

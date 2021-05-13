@@ -15,39 +15,37 @@ const bodyStyles = makeStyles(theme => ({
   body__info: {
     display: "flex",
     alignItems: "flex-end",
-    padding: 10
+    padding: 10,
+    "& img": {
+      height: "20vw",
+      margin: "0 20px",
+      boxShadow: "0 4px 60px rgba(0, 0, 0, 0.5)"
+    }
   },
   body__infoText: {
-    flex: 1
+    flex: 1,
+    marginLeft: 20,
+    "& h2": {
+      fontSize: 48,
+      marginBottom: 10
+    },
+    "& p": {
+      fontSize: 14
+    }
   },
-  "body__infoText > h2": {
-    fontSize: 48,
-    marginBottom: 10
-  },
-  "body__infoText > p": {
-    fontSize: 14
-  },
-  "body__info > img": {
-    height: "20vw",
-    margin: "0 20px",
-    boxShadow: "0 4px 60px rgba(0, 0, 0, 0.5)"
-  },
+
   body__icons: {
     display: "flex",
-    alignItems: "center"
-  },
-  "body__icons > .MuiSvgIcon-root": {
-    marginRight: 20
+    alignItems: "center",
+    "& .MuiSvgIcon-root": {
+      marginRight: 20
+    }
   },
   body__shuffle: {
     fontSize: "80px !important",
     marginLeft: 50,
     marginTop: 20,
     marginBottom: 20
-  },
-  "body__shuffle:hover": {
-    transition: "100ms transform ease-in",
-    transform: "scale(1.08)"
   },
   body__songs: {
     margin: "20px -30px"
