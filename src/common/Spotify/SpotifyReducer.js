@@ -1,4 +1,14 @@
-import { SPOTIFY_SET_TOKEN, SPOTIFY_GET_USER_PLAYLISTS } from "./SpotifyActionTypes";
+import {
+  SPOTIFY_SET_TOKEN,
+  SPOTIFY_GET_USER_PLAYLISTS,
+  SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST
+} from "./SpotifyActionTypes";
+
+/**
+ * @typedef {Object} Action
+ * @property {string} type - The name of the action
+ * @property {*} payload - The data we want to pass to reducer
+ */
 
 export const initialState = {
   accessToken: "",
@@ -13,9 +23,16 @@ export const initialState = {
     offset: 0,
     previous: null,
     total: 0
-  }
+  },
+  discoverWeeklyPlaylist: {}
 };
 
+/**
+ *
+ * @param {object} state - the state to be modified
+ * @param {Action}
+ * @returns {object}
+ */
 const SpotifyReducer = (state = initialState, { type, payload } = {}) => {
   switch (type) {
     case SPOTIFY_SET_TOKEN:
@@ -26,6 +43,11 @@ const SpotifyReducer = (state = initialState, { type, payload } = {}) => {
     case SPOTIFY_GET_USER_PLAYLISTS:
       console.log("🚀 ~ SPOTIFY_GET_USER_PLAYLISTS", payload);
       return { ...state, userPlaylists: payload };
+
+    case SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST:
+      console.log("🚀 ~ SPOTIFY_GET_DISCOVER_WEEKLY_PLAYLIST", payload);
+      return { ...state, discoverWeeklyPlaylist: payload };
+
     default:
       return state;
   }

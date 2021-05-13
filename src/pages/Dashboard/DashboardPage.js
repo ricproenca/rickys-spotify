@@ -33,6 +33,8 @@ const DashboardPage = () => {
 
 export default DashboardPage;
 
+//https://api.spotify.com/v1/playlists/37i9dQZEVXcRxWciCK0OoV
+
 // const me = await spotifyApi.getMe();
 // console.log("🚀 ~ spotify.getMe", me);
 // const getUserPlaylists = await spotifyApi.getUserPlaylists();

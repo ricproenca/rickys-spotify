@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Box from "@material-ui/core/Box";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
@@ -14,7 +15,7 @@ const Sidebar = ({ userPlaylists }) => {
   const { total, items } = userPlaylists;
 
   return (
-    <div className={classes.sidebar}>
+    <Box className={classes.sidebar}>
       <img
         className={classes.sidebar__logo}
         src="./assets/player/logo_black_white.png"
@@ -23,16 +24,16 @@ const Sidebar = ({ userPlaylists }) => {
       <SidebarOption title="Home" Icon={HomeIcon} />
       <SidebarOption title="Search" Icon={SearchIcon} />
       <SidebarOption title="Your Library" Icon={LibraryMusicIcon} />
-      <div className={classes.sidebar__title}>
+      <Box className={classes.sidebar__title}>
         <strong>{`PLAYLISTS (${total})`}</strong>
         <hr className={classes.sidebarHr} />
-      </div>
-      <div>
+      </Box>
+      <Box>
         {items?.map((playlist, index) => (
-          <SidebarOption key={index} title={playlist.name} />
+          <SidebarOption key={`${playlist.name}-${index}`} title={playlist.name} />
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

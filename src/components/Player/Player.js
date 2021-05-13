@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Box from "@material-ui/core/Box";
 
-import { getUserPlaylists } from "common/Spotify/SpotifyActionCreator";
+import { getUserPlaylists, getPlaylist } from "common/Spotify/SpotifyActionCreator";
 
 import Sidebar from "../../components/SideBar/Sidebar";
 import Body from "../../components/Body/Body";
@@ -19,16 +19,21 @@ const Player = () => {
   const classes = playerStyles();
 
   const userPlaylists = useSelector(state => state.spotify.userPlaylists);
+  const discoverWeeklyPlaylist = useSelector(state => state.spotify.discoverWeeklyPlaylist);
 
   useEffect(() => {
     dispatch(getUserPlaylists());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getPlaylist());
   }, []);
 
   return (
     <Box className={classes.player}>
       <Box className={classes.player__body}>
         <Sidebar userPlaylists={userPlaylists} />
-        <Body />
+        <Body discoverWeeklyPlaylist={discoverWeeklyPlaylist} />
       </Box>
       <Footer />
     </Box>
