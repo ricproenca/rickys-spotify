@@ -5,7 +5,15 @@ export const initialState = {
   expiresIn: 0,
   tokenType: "",
   expirationTime: 0,
-  userPlaylists: {}
+  userPlaylists: {
+    href: "",
+    items: [],
+    limit: 20,
+    next: null,
+    offset: 0,
+    previous: null,
+    total: 0
+  }
 };
 
 const SpotifyReducer = (state = initialState, { type, payload } = {}) => {

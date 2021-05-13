@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
 
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
@@ -9,10 +8,9 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import SidebarOption from "./SidebarOption";
 import sideBarStyles from "./Sidebar.styles";
 
-const Sidebar = () => {
+const Sidebar = ({ userPlaylists }) => {
   const classes = sideBarStyles();
 
-  const userPlaylists = useSelector(state => state.spotify.userPlaylists);
   const { total, items } = userPlaylists;
 
   return (
@@ -25,22 +23,41 @@ const Sidebar = () => {
       <SidebarOption title="Home" Icon={HomeIcon} />
       <SidebarOption title="Search" Icon={SearchIcon} />
       <SidebarOption title="Your Library" Icon={LibraryMusicIcon} />
-      <br />
-      <strong className={classes.sidebar__title}>{`PLAYLISTS (${total})`}</strong>
-      <hr className={classes.sidebarHr} />
-      {items?.map((playlist, index) => (
-        <SidebarOption key={index} title={playlist.name} />
-      ))}
+      <div className={classes.sidebar__title}>
+        <strong>{`PLAYLISTS (${total})`}</strong>
+        <hr className={classes.sidebarHr} />
+      </div>
+      <div>
+        {items?.map((playlist, index) => (
+          <SidebarOption key={index} title={playlist.name} />
+        ))}
+      </div>
     </div>
   );
 };
 
 Sidebar.propTypes = {
-  spotifyApi: PropTypes.object
+  userPlaylists: PropTypes.shape({
+    href: PropTypes.string,
+    items: PropTypes.array,
+    limit: PropTypes.number,
+    next: PropTypes.string,
+    offset: PropTypes.number,
+    previous: PropTypes.string,
+    total: PropTypes.number
+  })
 };
 
 Sidebar.defaultProps = {
-  spotifyApi: null
+  userPlaylists: {
+    href: "",
+    items: [],
+    limit: 20,
+    next: null,
+    offset: 0,
+    previous: null,
+    total: 0
+  }
 };
 
 export default Sidebar;

@@ -1,3 +1,5 @@
+import SpotifyWebApi from "spotify-web-api-js";
+
 /**
  * @typedef {Object} SpotifySessionParams
  * @property {string} access_token - The session token
@@ -5,6 +7,11 @@
  * @property {string} token_type - The session token type
  * @property {string} expiry_time - The time when the session will expire
  */
+
+/**
+ * Spotify Web API instance
+ */
+export const spotifyApi = new SpotifyWebApi();
 
 /**
  * Saves the session params in local storage
@@ -54,4 +61,12 @@ export const isValidSession = () => {
   } catch (err) {
     return false;
   }
+};
+
+/**
+ * Sets the access token to be able to do requests to Spotify API
+ */
+export const setAccessToken = () => {
+  const { access_token } = getAccessTokenParams();
+  spotifyApi.setAccessToken(access_token);
 };

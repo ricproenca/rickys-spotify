@@ -1,37 +1,41 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import { getAccessTokenParams, setAccessToken } from "common/Spotify/SpotifyAuth";
-import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
+import Box from "@material-ui/core/Box";
 
-import Player from "../../components/Player/Player";
+import { getUserPlaylists } from "common/Spotify/SpotifyActionCreator";
+
+import Sidebar from "../../components/SideBar/Sidebar";
+import Body from "../../components/Body/Body";
+import Footer from "../../components/Footer/Footer";
+
+import playerStyles from "./Player.styles";
 
 /**
  * Dashboard Page
  */
-const DashboardPage = () => {
+const Player = () => {
   const dispatch = useDispatch();
+  const classes = playerStyles();
 
-  // set spotify api access token
-  const { access_token, expires_in, token_type, expiry_time } = getAccessTokenParams();
-  setAccessToken();
+  const userPlaylists = useSelector(state => state.spotify.userPlaylists);
 
-  // * do we need to save spotify auth to redux state?
   useEffect(() => {
-    dispatch(
-      setSpotifyToken({
-        accessToken: access_token,
-        expiresIn: expires_in,
-        tokenType: token_type,
-        expirationTime: expiry_time
-      })
-    );
+    dispatch(getUserPlaylists());
   }, []);
 
-  return <Player />;
+  return (
+    <Box className={classes.player}>
+      <Box className={classes.player__body}>
+        <Sidebar userPlaylists={userPlaylists} />
+        <Body />
+      </Box>
+      <Footer />
+    </Box>
+  );
 };
 
-export default DashboardPage;
+export default Player;
 
 // const me = await spotifyApi.getMe();
 // console.log("🚀 ~ spotify.getMe", me);
