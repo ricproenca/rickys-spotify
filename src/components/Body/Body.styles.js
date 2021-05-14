@@ -24,7 +24,6 @@ const bodyStyles = makeStyles(theme => ({
   },
   body__infoText: {
     flex: 1,
-    marginLeft: 20,
     "& h2": {
       fontSize: 48,
       marginBottom: 10
