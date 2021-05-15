@@ -44,7 +44,11 @@ const bodyStyles = makeStyles(theme => ({
     fontSize: "80px !important",
     marginLeft: 50,
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
+    "&:hover": {
+      transition: "100ms transform ease-in",
+      transform: "scale(1.08)"
+    }
   },
   body__songs: {
     margin: "20px -30px"

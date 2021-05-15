@@ -32,20 +32,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-
-//https://api.spotify.com/v1/playlists/37i9dQZEVXcRxWciCK0OoV
-
-// const me = await spotifyApi.getMe();
-// console.log("🚀 ~ spotify.getMe", me);
-// const getUserPlaylists = await spotifyApi.getUserPlaylists();
-// console.log("🚀 ~ spotifyApi.getUserPlaylists", getUserPlaylists);
-// const getMySavedTracks = await spotifyApi.getMySavedTracks();
-// console.log("🚀 ~ spotifyApi.getMySavedTracks", getMySavedTracks);
-// const getMySavedAlbums = await spotifyApi.getMySavedAlbums();
-// console.log("🚀 ~ spotifyApi.getMySavedAlbums", getMySavedAlbums);
-// const getMyTopArtists = await spotifyApi.getMyTopArtists();
-// console.log("🚀 ~ spotifyApi.getMyTopArtists", getMyTopArtists);
-// const getMyTopTracks = await spotifyApi.getMyTopTracks();
-// console.log("🚀 ~ spotifyApi.getMyTopTracks", getMyTopTracks);
-// const getMyRecentlyPlayedTracks = await spotifyApi.getMyRecentlyPlayedTracks();
-// console.log("🚀 ~ spotifyApi.getMyRecentlyPlayedTracks", getMyRecentlyPlayedTracks);

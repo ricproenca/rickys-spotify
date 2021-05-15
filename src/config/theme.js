@@ -9,13 +9,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: {
-      contrastText: "rgba(0, 0, 0, 0.87)",
-      light: "#4ac776",
-      main: "#1db954",
-      dark: "#14813a"
+    common: {
+      white: "#fff",
+      black: "#191414",
+      green: "#1db954"
     }
   }
 });
 
+console.log("🚀 ~ theme", theme);
 export default theme;

@@ -66,3 +66,18 @@ export const getUserDetails = () => {
     return dispatch({ type: SPOTIFY_GET_USER_DETAILS, payload: response });
   };
 };
+
+export const playTrack = uri => {
+  return async dispatch => {
+    const devices = await spotifyApi.getMyDevices();
+    console.log("🚀 ~ getMyDevices ~ devices", devices);
+    // dispatch({ type: "SET_DEVICE", device_id: devices[0]?.id });
+
+    // await spotifyApi.play({ context_uri: uri });
+    // dispatch({ type: "SET_PLAYING", playing: true });
+
+    // const response = await spotifyApi.getMyCurrentPlayingTrack();
+    // console.log("🚀 ~ getMyCurrentPlayingTrack ~ response", response);
+    // return dispatch({ type: "SET_ITEM", item: response.item });
+  };
+};
