@@ -9,6 +9,8 @@ import headerStyles from "./Header.styles";
 const Header = ({ user }) => {
   const classes = headerStyles();
 
+  const { images, display_name } = user;
+
   return (
     <Box className={classes.header}>
       <Box className={classes.header__left}>
@@ -16,8 +18,8 @@ const Header = ({ user }) => {
         <input placeholder="Search for Artists, Songs, or Albums" type="text" />
       </Box>
       <Box className={classes.header__right}>
-        <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
-        <h4>{user?.display_name}</h4>
+        <Avatar src={images[0]?.url} alt={display_name} />
+        <h4>{display_name}</h4>
       </Box>
     </Box>
   );

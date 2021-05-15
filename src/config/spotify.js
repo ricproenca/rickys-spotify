@@ -10,8 +10,8 @@ const authEndpoint = "https://accounts.spotify.com/authorize";
  * We should configure this in Spotify Web API settings.
  * This is the callback URL where to take back the user if the Spotify login was successful.
  */
-// const redirectUri = "http://localhost:3000/redirect/";
-const redirectUri = "https://spotify-ricky.web.app/redirect/";
+const redirectUri = "http://localhost:3000/redirect/";
+// const redirectUri = "https://spotify-ricky.web.app/redirect/";
 
 /**
  * clientId

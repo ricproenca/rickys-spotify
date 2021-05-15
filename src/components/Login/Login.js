@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 import { Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
-import spotifyLogo from "./assets/spotify-logo.png"; // Tell webpack this JS file uses this image
+import spotifyLogo from "../../assets/spotify/logos/Spotify_Logo_RGB_Green.png"; // Tell webpack this JS file uses this image
 import loginStyles from "./Login.styles";
 
 /**

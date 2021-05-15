@@ -18,7 +18,7 @@ const Sidebar = ({ userPlaylists }) => {
     <Box className={classes.sidebar}>
       <img
         className={classes.sidebar__logo}
-        src="./assets/player/logo_black_white.png"
+        src="../../assets/spotify/logos/Spotify_Logo_RGB_White.png"
         alt="Spotify logo"
       />
       <SidebarOption title="Home" Icon={HomeIcon} />

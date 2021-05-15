@@ -12,11 +12,11 @@ import Footer from "../../components/Footer/Footer";
 import playerStyles from "./Player.styles";
 
 /**
- * Dashboard Page
+ * Player Page
  */
 const Player = () => {
-  const dispatch = useDispatch();
   const classes = playerStyles();
+  const dispatch = useDispatch();
 
   const userPlaylists = useSelector(state => state.spotify.userPlaylists);
   const discoverWeeklyPlaylist = useSelector(state => state.spotify.discoverWeeklyPlaylist);
