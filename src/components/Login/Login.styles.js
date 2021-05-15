@@ -12,7 +12,8 @@ const loginStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   Logo: {
-    width: 300
+    width: 300,
+    paddingBottom: 100
   },
   LoginButton: {
     padding: 10,
@@ -20,8 +21,14 @@ const loginStyles = makeStyles(theme => ({
     fontWeight: 600,
     fontSize: 16,
     backgroundColor: theme.palette.common.green,
-    color: "#ffffff",
-    width: 300
+    width: 300,
+    "&:hover": {
+      backgroundColor: theme.palette.common.green,
+      opacity: 0.8
+    }
+  },
+  Message: {
+    color: theme.palette.common.green
   }
 }));
 

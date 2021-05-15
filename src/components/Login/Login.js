@@ -20,20 +20,14 @@ const Login = ({ handleLogin }) => {
         <img className={classes.Logo} src={spotifyLogo} alt="Spotify Logo" />
       </Box>
       <Box className={classes.Box}>
-        <Button
-          className={classes.LoginButton}
-          variant="contained"
-          color="primary"
-          onClick={handleLogin}
-        >
+        <Button className={classes.LoginButton} display="block" onClick={handleLogin}>
           Login to Rickys spotify
         </Button>
       </Box>
-      <Box className={classes.Message} textAlign="center" fontWeight="fontWeightBold">
-        <Typography variant="overline" display="block" gutterBottom>
-          Not another spotify clone...
-        </Typography>
-      </Box>
+
+      <Typography className={classes.Message} display="block" gutterBottom>
+        Not another spotify clone...
+      </Typography>
     </Box>
   );
 };
