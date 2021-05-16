@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { getAccessTokenParams, setAccessToken } from "common/Spotify/SpotifyAuth";
 import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
+import loadSpotifyWebPlayer from "common/Spotify/SpotifyWebPlayer";
 
-import Player from "../../components/Player/Player";
+import Player from "../../components/App/App";
 
 /**
  * Dashboard Page
  */
 const DashboardPage = () => {
   const dispatch = useDispatch();
+
+  const [loaded, setLoaded] = useState(false);
 
   // set spotify api access token
   const { access_token, expires_in, token_type, expiry_time } = getAccessTokenParams();
@@ -28,7 +31,14 @@ const DashboardPage = () => {
     );
   }, []);
 
-  return <Player />;
+  useEffect(async () => {
+    (async () => {
+      await loadSpotifyWebPlayer();
+      setLoaded(true);
+    })();
+  }, []);
+
+  return loaded ? <Player /> : null;
 };
 
 export default DashboardPage;

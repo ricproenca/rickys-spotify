@@ -5,17 +5,17 @@ import Box from "@material-ui/core/Box";
 
 import { getUserPlaylists, getPlaylist, getUserDetails } from "common/Spotify/SpotifyActionCreator";
 
-import Sidebar from "../../components/SideBar/Sidebar";
-import Body from "../../components/Body/Body";
-import Footer from "../../components/Footer/Footer";
+import Sidebar from "../SideBar/Sidebar";
+import Body from "../Body/Body";
+import Footer from "../Footer/Footer";
 
-import playerStyles from "./Player.styles";
+import AppStyles from "./App.styles";
 
 /**
  * Player Page
  */
-const Player = () => {
-  const classes = playerStyles();
+const App = () => {
+  const classes = AppStyles();
   const dispatch = useDispatch();
 
   const userPlaylists = useSelector(state => state.spotify.userPlaylists);
@@ -37,7 +37,7 @@ const Player = () => {
   );
 };
 
-export default Player;
+export default App;
 
 // const me = await spotifyApi.getMe();
 // console.log("🚀 ~ spotify.getMe", me);
