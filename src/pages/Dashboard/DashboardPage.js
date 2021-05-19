@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { getAccessTokenParams, setAccessToken } from "common/Spotify/SpotifyAuth";
 import { setSpotifyToken } from "common/Spotify/SpotifyActionCreator";
-import loadSpotifyWebPlayer from "common/Spotify/SpotifyWebPlayer";
+import { getSpotifyPlayer, play } from "common/Spotify/SpotifyWebPlayer";
 
 import Player from "../../components/App/App";
 
@@ -33,7 +33,17 @@ const DashboardPage = () => {
 
   useEffect(async () => {
     (async () => {
-      await loadSpotifyWebPlayer();
+      const player = await getSpotifyPlayer();
+      console.log("🚀 ~ player", player);
+
+      // setTimeout(() => {
+      //   console.log("Play!");
+      //   play({
+      //     playerInstance: player,
+      //     spotifyUri: "spotify:track:7xGfFoTpQ2E7fRF5lN10tr"
+      //   });
+      // }, 2000);
+
       setLoaded(true);
     })();
   }, []);

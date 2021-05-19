@@ -29,6 +29,9 @@ const loginStyles = makeStyles(theme => ({
   },
   Message: {
     color: theme.palette.common.green
+  },
+  link: {
+    color: theme.palette.common.green
   }
 }));
 
