@@ -1,5 +1,3 @@
-const TOKEN =
-  "BQCsILVLoz9ntsqp0Ort1e-dq4OrNjajWdsUApNYYnCs80qSBdhTB0wo-PgDzxvTZRwyGK9V9_C0K-T_6Oyo1SEkLOd1BygtcAGa4g5yD0IejDB3wCSWLb3q01EmHi1Dz7KjBupRO-sdm7kFQxUxk5QPDcflEFR6YeM";
 let device_id;
 let player;
 
@@ -33,9 +31,11 @@ export const getSpotifyPlayer = async () => {
     const { Player } = await waitForSpotifyWebPlaybackSDKToLoad();
     console.log("The Web Playback SDK has loaded.", Player);
 
+    console.log("process.env.REACT_APP_WEB_PLAYER_TOKEN", process.env.REACT_APP_WEB_PLAYER_TOKEN);
+
     player = new Spotify.Player({
       name: "Rickys Spotify Web Player",
-      getOAuthToken: cb => cb(TOKEN)
+      getOAuthToken: cb => cb(process.env.REACT_APP_WEB_PLAYER_TOKEN)
     });
 
     // Error handling
